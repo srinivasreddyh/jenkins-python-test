@@ -1,5 +1,5 @@
 import pandas as pd
-import numpy as np
+#import numpy as np
 
 p_data=[{1:'dell',2:'lenovo',3:'hp',4:'vaio'}]
 df = pd.DataFrame(p_data)
