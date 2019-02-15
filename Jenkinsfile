@@ -40,7 +40,7 @@ pipeline {
     stage('numpy_pandas') {
         steps{
               sh '''
-                    python numpy_pandas_ex.py bdist_wheel
+                    python numpy_pandas_ex.py
                  '''
             }
        }   
