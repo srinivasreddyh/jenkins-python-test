@@ -39,7 +39,7 @@ pipeline {
        }
     stage('numpy_pandas') {
         steps{
-              sh '''source activate ${BUILD_TAG}
+              sh '''
                     python numpy_pandas_ex.py bdist_wheel
                  '''
             }
