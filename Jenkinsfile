@@ -15,7 +15,7 @@ pipeline {
         VIRTUAL_ENV = "${env.WORKSPACE}/venv"
 }
     stages {
-        stage ('Install_Requirements') {
+        stage ('Install Requirements') {
             steps {
                 sh """
                     echo ${SHELL}
@@ -31,7 +31,7 @@ pipeline {
                 echo "${env.WORKSPACE}"
             }
      }
-     
+
     stage ('Start') {
       steps {
         slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
@@ -65,12 +65,14 @@ pipeline {
         }
         success {
             echo 'Succeeeded...!'
+            slackSend (color: '#00FF00', message: "SUCCESSFUL...: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
         unstable {
             echo 'Unstable...!'
         }
         failure {
             echo 'Failed...!'
+            slackSend (color: '#FF0000', message: "FAILED...: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
         changed {
             echo 'Things were different before...!'
