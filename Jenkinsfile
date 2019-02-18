@@ -15,6 +15,11 @@ pipeline {
         VIRTUAL_ENV = "${env.WORKSPACE}/venv"
 }
     stages {
+        stage ('Start') {
+      steps {
+        slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+         }
+    }
         stage ('Install Requirements') {
             steps {
                 sh """
@@ -31,13 +36,6 @@ pipeline {
                 echo "${env.WORKSPACE}"
             }
      }
-
-    stage ('Start') {
-      steps {
-        slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-         }
-    } 
-    
     stage('Checkout SCM') {
         steps{
              checkout scm
@@ -53,7 +51,7 @@ pipeline {
     stage('generator_fun') {
         steps{
               sh '''
-                    python pythonfilesgenerators_fun_ex.py
+                    python pythonfiles/generators_fun_ex.py
                  '''
             }
        }      
