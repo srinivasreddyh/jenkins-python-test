@@ -43,7 +43,14 @@ pipeline {
                     python numpy_pandas_ex.py
                  '''
             }
-       }   
+       }
+    stage('generator_fun') {
+        steps{
+              sh '''
+                    python pythonfiles/generators_fun_ex.py
+                 '''
+            }
+       }      
 }
   post {
         always {
