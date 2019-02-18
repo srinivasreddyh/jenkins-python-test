@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, '/jenkins-python-test/pythonfiles')
+sys.path.insert(0, 'jenkins-python-test/pythonfiles')
 
 import generators_fun_ex
 
