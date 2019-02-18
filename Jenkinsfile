@@ -54,7 +54,7 @@ pipeline {
 }
   post {
         always {
-            echo 'One way or another, I have finished'
+            echo 'Started...!'
             deleteDir() /* clean up our workspace */
         }
         success {
