@@ -58,7 +58,7 @@ pipeline {
 }
   post {
         always {
-            echo 'Started...!'
+            echo 'CI Started...!'
             deleteDir() /* clean up our workspace */
         }
         success {
