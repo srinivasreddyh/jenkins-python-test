@@ -57,7 +57,9 @@ pipeline {
        }    
      stage('log to text') {
         steps{
-          sh '${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log > log.txt'
+          sh '''
+              ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log > log.txt
+             '''
         }
      }   
 }
