@@ -44,7 +44,7 @@ pipeline {
     stage('numpy pandas') {
         steps{
               sh '''
-                    python numpy_pandas_ex.py
+                    python numpy_pandas_ex.py > output.txt
                  '''
             }
        }
@@ -54,14 +54,14 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       }    
+       } /*   
      stage('log to text') {
         steps{
           sh '''
               ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log >> log.txt
              '''
         }
-     }   
+     } */  
 }
   post {
         always {
