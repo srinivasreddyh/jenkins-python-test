@@ -41,20 +41,21 @@ pipeline {
              checkout scm
             }
        }
-    stage('numpy_pandas') {
+    stage('numpy pandas') {
         steps{
               sh '''
                     python numpy_pandas_ex.py
                  '''
             }
        }
-    stage('generator_fun') {
+    stage('generator fun') {
         steps{
               sh '''
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       }      
+       }    
+        
 }
   post {
         always {
