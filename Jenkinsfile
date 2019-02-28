@@ -33,7 +33,7 @@ pipeline {
                     pip install -r requirements.txt
                 """
                 echo "RESULT: ${currentBuild.result}"
-                echo "${env.WORKSPACE}"
+               /* echo "${env.WORKSPACE}" */
             }
      }
     stage('Checkout SCM') {
@@ -54,30 +54,29 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       } /*   
-     stage('log to text') {
-        steps{
-          sh '''
-              ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log >> log.txt
-             '''
+       } 
+    stage('Download') {
+            steps {
+                sh 'echo "artifact file" > gen_output.txt'
+            }
         }
-     } */  
 }
   post {
         always {
-            echo 'CI Started...!'
+            echo 'Build Started...!'
+            archiveArtifacts artifacts: 'gen_output.txt', onlyIfSuccessful: true
             deleteDir() /* clean up our workspace */
         }
         success {
             echo 'Succeeeded...!'
-            slackSend (color: '#00FF00', message: "SUCCESSFUL...!   : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+           /* slackSend (color: '#00FF00', message: "SUCCESSFUL...! : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})") */
         }
         unstable {
             echo 'Unstable...!'
         }
         failure {
             echo 'Failed...!'
-            slackSend (color: '#FF0000', message: "FAILED...!   : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+           /* slackSend (color: '#FF0000', message: "FAILED...! : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})") */
         }
         changed {
             echo 'Things were different before...!'
