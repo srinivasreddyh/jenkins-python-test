@@ -44,7 +44,7 @@ pipeline {
     stage('numpy pandas') {
         steps{
               sh '''
-                    python numpy_pandas_ex.py > output.txt
+                    python numpy_pandas_ex.py
                  '''
             }
        }
@@ -57,7 +57,7 @@ pipeline {
        } 
     stage('Download') {
             steps {
-                sh 'echo "artifact file" > gen_output.txt'
+                sh 'numpy_pandas_ex.py > gen_output.txt'
             }
         }
 }
