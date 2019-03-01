@@ -57,7 +57,7 @@ pipeline {
        } 
     stage('Download') {
             steps {
-                sh 'numpy_pandas_ex.py > gen_output.txt'
+                sh 'python numpy_pandas_ex.py > gen_output.txt'
             }
         }
 }
