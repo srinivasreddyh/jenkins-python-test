@@ -10,9 +10,9 @@ pipeline {
        timestamps()
        buildDiscarder(logRotator(numToKeepStr: '30'))
        /*timeout(time: 30, unit: 'SECONDS')*/
-    }
+    } /*
     environment {
-        VIRTUAL_ENV = "${env.WORKSPACE}/venv"
+        VIRTUAL_ENV = "${env.WORKSPACE}/venv" */
 }
     stages {
         stage ('Start') {
