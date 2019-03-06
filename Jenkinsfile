@@ -10,16 +10,16 @@ pipeline {
        timestamps()
        buildDiscarder(logRotator(numToKeepStr: '30'))
        /*timeout(time: 30, unit: 'SECONDS')*/
-    } /*
+    }
     environment {
-        VIRTUAL_ENV = "${env.WORKSPACE}/venv" */
+        VIRTUAL_ENV = "${env.WORKSPACE}/venv"
 }
     stages {
         stage ('Start') {
       steps {
         slackSend (color: '#FFFF00', message: "STARTED...!  : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
          }
-    }
+    } /*
         stage ('Install Requirements') {
             steps {
                 sh """
@@ -33,9 +33,9 @@ pipeline {
                     pip install -r requirements.txt
                 """
                 echo "RESULT: ${currentBuild.result}"
-               /* echo "${env.WORKSPACE}" */
+                echo "${env.WORKSPACE}"
             }
-     }
+     }  */
     stage('Checkout SCM') {
         steps{
              checkout scm
