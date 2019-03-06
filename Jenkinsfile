@@ -40,7 +40,7 @@ pipeline {
         steps{
              checkout scm
             }
-       }
+       } /*
     stage('numpy pandas') {
         steps{
               sh '''
@@ -54,7 +54,7 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       } 
+       } */
     stage('Download') {
             steps {
                 sh 'python numpy_pandas_ex.py > gen_output.txt'
