@@ -57,14 +57,14 @@ pipeline {
        }
     stage('Download') {
             steps {
-                sh 'python numpy_pandas_ex.py > gen_output.txt'
+                sh 'python numpy_pandas_ex.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.txt'
             }
         }
 }
   post {
         always {
             echo 'Build Started...!'
-            archiveArtifacts artifacts: 'gen_output.txt', onlyIfSuccessful: true
+            archiveArtifacts artifacts: '/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.txt', onlyIfSuccessful: true
             deleteDir() /* clean up our workspace */
         }
         success {
