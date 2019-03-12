@@ -58,7 +58,7 @@ pipeline {
     stage('Download') {
             steps {
                 sh 'python numpy_pandas_ex.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.txt'
-                sh 'chmod 777 gen_output.pkl'
+                sh 'sudo chmod 777 gen_output.pkl'
             }
         }
 }
