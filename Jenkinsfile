@@ -58,7 +58,7 @@ pipeline {
        } 
     stage('Download') {
             steps {
-                sh 'python numpy_pandas_ex.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output${env.BUILD_NUMBER}.txt'
+                sh 'python numpy_pandas_ex.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/${env.BUILD_NUMBER}gen_output.txt'
             }
         }
 } 
