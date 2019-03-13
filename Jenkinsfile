@@ -45,7 +45,6 @@ pipeline {
         steps{
               sh '''
                     python numpy_pandas_ex.py
-                   /* sh 'sudo chmod 777 gen_output.pkl'  */
                  '''
             }
        }
