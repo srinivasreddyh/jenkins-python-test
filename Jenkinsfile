@@ -35,17 +35,17 @@ pipeline {
                 echo "RESULT: ${currentBuild.result}"
                 echo "${env.WORKSPACE}"
             }
-     }  
+     }  */
     stage('Checkout SCM') {
         steps{
              checkout scm
             }
-       } */
+       }
     stage('numpy pandas') {
         steps{
               sh '''
                     python numpy_pandas_ex.py
-                    sh 'sudo chmod 777 gen_output.pkl'
+                   /* sh 'sudo chmod 777 gen_output.pkl'  */
                  '''
             }
        }
@@ -55,13 +55,13 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       }
+       } /*
     stage('Download') {
             steps {
                 sh 'python numpy_pandas_ex.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.txt'
             }
         }
-}
+} */
   post {
         always {
             echo 'Build Started...!'
