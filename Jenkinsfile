@@ -66,7 +66,7 @@ pipeline {
         always {
             echo 'Build Started...!'
            /* archiveArtifacts artifacts: '/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.txt', onlyIfSuccessful: true */
-            deleteDir() /* clean up our workspace */
+            deleteDir()  /* clean up our workspace */
         }
         success {
             echo 'Succeeeded...!'
