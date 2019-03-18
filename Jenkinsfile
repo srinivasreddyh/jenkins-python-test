@@ -72,7 +72,7 @@ pipeline {
         }
         success {
             echo 'Succeeeded...!'
-            sh 'echo %BUILD_NUMBER% > /home/srinivasreddyh/mypython/buildno_time.txt'
+            echo %BUILD_NUMBER% > /home/srinivasreddyh/mypython/buildno_time.txt
            /* slackSend (color: '#00FF00', message: "SUCCESSFUL...! : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})") */
         }
         unstable {
