@@ -55,14 +55,14 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       } 
+       } /*
     stage('Download') {
             steps {
                 sh '''
-                python numpy_pandas_ex.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/${env.BUILD_NUMBER}.txt
-                   '''
+                python numpy_pandas_ex.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.txt
+                  '''
             }
-        }
+        }  */
 } 
   post {
         always {

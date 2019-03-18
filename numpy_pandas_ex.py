@@ -21,3 +21,9 @@ print n
 
 with open("/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output2.pkl","wb") as f:
 	pickle.dump(df,f)
+
+
+next_bn = server.get_job_info('job_name')['nextBuildNumber']
+print "next_Build_Number :"
+print next_bn
+server.set_next_build_number('job_name', next_bn + 50)
