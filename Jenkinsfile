@@ -55,13 +55,6 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       }
-    stage('rename') {
-        steps{
-              sh '''
-                    python rename.py
-                 '''
-            }
        }    /*
     stage('Download') {
             steps {
