@@ -55,7 +55,14 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       } /*
+       }
+    stage('rename') {
+        steps{
+              sh '''
+                    python rename.py
+                 '''
+            }
+       }    /*
     stage('Download') {
             steps {
                 sh '''
@@ -72,7 +79,6 @@ pipeline {
         }
         success {
             echo 'Succeeeded...!'
-            /*sh 'echo %BUILD_NUMBER% > /home/srinivasreddyh/mypython/buildno_time.txt' */
            /* slackSend (color: '#00FF00', message: "SUCCESSFUL...! : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})") */
         }
         unstable {
