@@ -61,7 +61,7 @@ pipeline {
               echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
               echo "Running ${env.BUILD_ID} on ${env.BUILD_URL}"
               echo "Running ${env.BUILD_ID},${env.JOB_NAME} on ${env.BUILD_URL}"
-              echo "${env.JOB_NAME}${env.BUILD_ID}" > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/build_output.txt
+              echo "${env.JOB_NAME}${env.BUILD_ID}" > build_output.txt
             }
        }    /*
     stage('Download') {
