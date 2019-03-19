@@ -45,7 +45,7 @@ pipeline {
         steps{
               sh '''
                     python numpy_pandas_ex.py
-                    sudo chmod 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output_os.pkl
+                    sudo chmod 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl
                  '''
             }
        }

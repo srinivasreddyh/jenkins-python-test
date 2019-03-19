@@ -19,7 +19,7 @@ print df
 print "numpy output is...."
 print n
 
-with open("/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output_os.pkl","wb") as f:
+with open("/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl","wb") as f:
 	pickle.dump(df,f)
 '''
 import os
