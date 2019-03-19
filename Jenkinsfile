@@ -55,6 +55,11 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
+       }
+    stage('build_id url') {
+        steps{
+              echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
        }    /*
     stage('Download') {
             steps {
