@@ -7,6 +7,9 @@ import pandas as pd
 import numpy as np
 import pickle
 
+# using jenkinsapi
+from jenkinsapi.jenkins import Jenkins
+
 p_data=[{1:'dell',2:'lenovo',3:'hp',4:'vaio'}]
 df = pd.DataFrame(p_data)
 
@@ -19,8 +22,17 @@ print df
 print "numpy output is...."
 print n
 
-with open("/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl","wb") as f:
-	pickle.dump(df,f)
+J = Jenkins('http://localhost:8080', username='srinivasreddyh', password='meghana3')
+build_no=str(J['master'].get_last_good_build())[-2:]
+print "Current BUILD_NUMBER :",build_no
+
+filename = "/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/%s.pkl" %build_no
+with open(filename ,"wb") as f:
+    pickle.dump(df,f4)
+
+
+#with open("/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl","wb") as f:
+#	pickle.dump(df,f)
 '''
 import os
 job_name = os.environ.get('JOB_NAME', 'default_name')
