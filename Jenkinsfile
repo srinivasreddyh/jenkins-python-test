@@ -55,15 +55,15 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
-       }
+       }  /*
     stage('build_id url') {
         steps{
               echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
               echo "Running ${env.BUILD_ID} on ${env.BUILD_URL}"
               echo "Running ${env.BUILD_ID},${env.JOB_NAME} on ${env.BUILD_URL}"
-              ${env.JOB_NAME}${env.BUILD_ID}  >  /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/build_output.txt 
+              "${env.JOB_NAME}${env.BUILD_ID}" > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/build_output.txt 
             }
-       }    /*
+       }    
     stage('Download') {
             steps {
                 sh '''
