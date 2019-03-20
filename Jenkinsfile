@@ -19,7 +19,7 @@ pipeline {
       steps {
         slackSend (color: '#FFFF00', message: "STARTED...!  : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
          }
-    } /*
+    } 
         stage ('Install Requirements') {
             steps {
                 sh """
@@ -32,10 +32,10 @@ pipeline {
                     pip install --upgrade pip
                     pip install -r requirements.txt
                 """
-                echo "RESULT: ${currentBuild.result}"
-                echo "${env.WORKSPACE}"
+                /*echo "RESULT: ${currentBuild.result}"
+                echo "${env.WORKSPACE}" */
             }
-     }  */
+     } 
     stage('Checkout SCM') {
         steps{
              checkout scm
