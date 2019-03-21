@@ -54,6 +54,7 @@ pipeline {
               sh '''
                     python pythonfiles/generators_fun_ex.py
                  '''
+                 sh script: 'echo $PATH'
             }
        }  /*
     stage('build_id url') {
