@@ -8,7 +8,6 @@ import numpy as np
 import pickle
 
 # using jenkinsapi
-import jenkinsapi
 from jenkinsapi.jenkins import Jenkins
 
 p_data=[{1:'dell',2:'lenovo',3:'hp',4:'vaio'}]
