@@ -39,6 +39,7 @@ pipeline {
     stage('Checkout SCM') {
         steps{
              checkout scm
+             sh script: 'echo $PATH'
             }
        }
     stage('numpy pandas') {
@@ -54,7 +55,6 @@ pipeline {
               sh '''
                     python pythonfiles/generators_fun_ex.py
                  '''
-                 sh script: 'echo $PATH'
             }
        }  /*
     stage('build_id url') {
