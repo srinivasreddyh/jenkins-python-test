@@ -28,7 +28,7 @@ print "Current BUILD_NUMBER :",build_no
 
 filename = "/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/%s.pkl" %build_no
 with open(filename ,"wb") as f:
-    pickle.dump(df,f4)
+    pickle.dump(df,f)
 
 
 #with open("/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl","wb") as f:
