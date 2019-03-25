@@ -45,14 +45,15 @@ pipeline {
     stage('numpy pandas') {
         steps{
               sh '''
-                     python numpy_pandas_ex.py
-                     sudo chmod 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl
+                    #. /home/srinivasreddyh/virtualenv/bin/activate
+                    python numpy_pandas_ex.py
+                    sudo chmod 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl
                  '''
             }
        }
     stage('generator fun') {
         steps{
-              sh '''
+              sh '''#. /home/srinivasreddyh/virtualenv/bin/activate
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
