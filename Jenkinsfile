@@ -8,7 +8,7 @@ pipeline {
   agent any 
     options{
        timestamps()
-       buildDiscarder(logRotator(numToKeepStr: '30'))
+       buildDiscarder(logRotator(numToKeepStr: '50'))
        /*timeout(time: 30, unit: 'SECONDS')*/
     }
     environment {
@@ -23,12 +23,12 @@ pipeline {
         stage ('Install Requirements') {
             steps {
                 sh """
-                    echo ${SHELL}
+                   /* echo ${SHELL}
                     [ -d venv ] && rm -rf venv
                     #virtualenv --python=python2.7 venv
                     virtualenv venv
                     #. venv/bin/activate
-                    export PATH=${VIRTUAL_ENV}/bin:${PATH}
+                    export PATH=${VIRTUAL_ENV}/bin:${PATH} */
                     pip install --upgrade pip
                     pip install -r requirements.txt
                 """
