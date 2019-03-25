@@ -25,7 +25,7 @@ pipeline {
                 sh """
                     . /home/srinivasreddyh/virtualenv/bin/activate
                     pip install --upgrade pip
-                    pip install -r requirements.txt
+                    python -m pip install --user -r requirements.txt
                 """
                 /*echo "RESULT: ${currentBuild.result}"
                 echo "${env.WORKSPACE}" */
