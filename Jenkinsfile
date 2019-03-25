@@ -23,12 +23,7 @@ pipeline {
         stage ('Install Requirements') {
             steps {
                 sh """
-                    echo ${SHELL}
-                    [ -d venv ] && rm -rf venv
-                    #virtualenv --python=python2.7 venv
-                    virtualenv venv
-                    #. /home/srinivasreddyh/virtualenv/bin/activate
-                    export PATH=${VIRTUAL_ENV}/bin:${PATH}
+                    . /home/srinivasreddyh/virtualenv/bin/activate
                     pip install --upgrade pip
                     pip install -r requirements.txt
                 """
@@ -45,8 +40,6 @@ pipeline {
     stage('numpy pandas') {
         steps{
               sh '''
-                    #. /home/srinivasreddyh/virtualenv/bin/activate
-                    pip install -r requirements.txt
                     python numpy_pandas_ex.py
                     sudo chmod 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl
                  '''
