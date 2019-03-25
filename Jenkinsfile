@@ -46,6 +46,7 @@ pipeline {
         steps{
               sh '''
                     #. /home/srinivasreddyh/virtualenv/bin/activate
+                    pip install -r requirements.txt
                     python numpy_pandas_ex.py
                     sudo chmod 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl
                  '''
