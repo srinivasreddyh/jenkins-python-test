@@ -19,7 +19,7 @@ pipeline {
       steps {
         slackSend (color: '#FFFF00', message: "STARTED...!  : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
          }
-    } 
+    } /*
         stage ('Install Requirements') {
             steps {
                 sh """
@@ -35,7 +35,7 @@ pipeline {
                 /*echo "RESULT: ${currentBuild.result}"
                 echo "${env.WORKSPACE}" */
             }
-     } 
+     } */
     stage('Checkout SCM') {
         steps{
              checkout scm
@@ -49,6 +49,7 @@ pipeline {
                     #virtualenv --python=python2.7 venv
                     virtualenv venv
                     #. venv/bin/activate
+                    export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install --upgrade pip
                     pip install -r requirements.txt
                     python numpy_pandas_ex.py
