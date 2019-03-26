@@ -23,9 +23,9 @@ pipeline {
         stage ('Install Requirements') {
             steps {
                 sh """
-                    . /home/srinivasreddyh/virtualenv/bin/activate
+                    #! /home/srinivasreddyh/virtualenv/bin/activate
                     pip install --upgrade pip
-                    python -m pip install -r requirements.txt
+                    pip install -r requirements.txt
                 """
                 /*echo "RESULT: ${currentBuild.result}"
                 echo "${env.WORKSPACE}" */
