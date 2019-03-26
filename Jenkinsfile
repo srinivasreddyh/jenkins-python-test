@@ -32,8 +32,8 @@ pipeline {
                     pip install --upgrade pip
                     pip install -r requirements.txt
                 """
-                /*echo "RESULT: ${currentBuild.result}"
-                echo "${env.WORKSPACE}" */
+                echo "RESULT: ${currentBuild.result}"
+                echo "${env.WORKSPACE}"
             }
      } */
     stage('Checkout SCM') {
