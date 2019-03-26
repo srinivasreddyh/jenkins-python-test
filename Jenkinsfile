@@ -31,7 +31,6 @@ pipeline {
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install --upgrade pip
                     pip install -r requirements.txt
-                    python numpy_pandas_ex.py
                 """
                 /*echo "RESULT: ${currentBuild.result}"
                 echo "${env.WORKSPACE}" */
@@ -46,14 +45,19 @@ pipeline {
     stage('numpy pandas') {
         steps{
               sh '''
+                    [ -d venv ] && rm -rf venv
+                    #virtualenv --python=python2.7 venv
+                    virtualenv venv
+                    #. venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
                     python numpy_pandas_ex.py
-                    sudo chmod 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.pkl
                  '''
             }
        }
     stage('generator fun') {
         steps{
-              sh '''#. /home/srinivasreddyh/virtualenv/bin/activate
+              sh '''
                     python pythonfiles/generators_fun_ex.py
                  '''
             }
