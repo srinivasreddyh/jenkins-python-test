@@ -31,6 +31,7 @@ pipeline {
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install --upgrade pip
                     pip install -r requirements.txt
+                    python numpy_pandas_ex.py
                 """
                 /*echo "RESULT: ${currentBuild.result}"
                 echo "${env.WORKSPACE}" */
