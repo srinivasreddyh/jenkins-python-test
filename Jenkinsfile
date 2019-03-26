@@ -53,6 +53,7 @@ pipeline {
                     pip install --upgrade pip
                     pip install -r requirements.txt
                     python numpy_pandas_ex.py
+                    chmod -R 777
                  '''
             }
        }
