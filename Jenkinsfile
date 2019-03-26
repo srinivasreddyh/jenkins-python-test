@@ -23,7 +23,7 @@ pipeline {
         stage ('Install Requirements') {
             steps {
                 sh """
-                    #! /home/srinivasreddyh/virtualenv/bin/activate
+                    source /home/srinivasreddyh/virtualenv/bin/activate
                     pip install --upgrade pip
                     pip install -r requirements.txt
                 """
