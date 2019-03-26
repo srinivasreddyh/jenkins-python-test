@@ -24,7 +24,7 @@ print n
 
 J = Jenkins('http://localhost:8080', username='srinivasreddyh', password='meghana3')
 build_no=str(J['master'].get_last_good_build())[-3:]
-print "Current BUILD_NUMBER :",build_no
+print "Last Successful BUILD_NUMBER :",build_no
 
 filename = "/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/%s.pkl" %build_no
 with open(filename ,"wb") as f:
