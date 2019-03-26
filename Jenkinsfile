@@ -33,7 +33,7 @@ pipeline {
                     pip install -r requirements.txt
                 """
                 echo "RESULT: ${currentBuild.result}"
-                echo "${env.WORKSPACE}"
+                echo "${env.WORKSPACE}" 
             }
      } */
     stage('Checkout SCM') {
