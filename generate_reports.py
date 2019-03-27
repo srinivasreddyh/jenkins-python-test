@@ -11,7 +11,7 @@ print df
 
 J = Jenkins('http://localhost:8080', username='srinivasreddyh', password='meghana3')
 build_no=str(J['master'].get_last_build())[-3:]
-print "Last BUILD_NUMBER :",build_no
+print "current BUILD_NUMBER :",build_no
 
 # create a pickle file, buid_number as name
 filename = "/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/%s.pkl" %build_no
