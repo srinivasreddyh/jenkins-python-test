@@ -19,7 +19,7 @@ pipeline {
       steps {
         slackSend (color: '#FFFF00', message: "STARTED...!  : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
          }
-    }
+    } /*
         stage ('Install Requirements') {
             steps {
                 sh """
@@ -35,13 +35,13 @@ pipeline {
                /* echo "RESULT: ${currentBuild.result}"
                 echo "${env.WORKSPACE}" */
             }
-     }
+     } 
     stage('Checkout SCM') {
         steps{
              checkout scm
              sh script: 'echo $PATH'
             }
-       }
+       } */
     stage('numpy pandas') {
         steps{
               sh """
@@ -50,14 +50,40 @@ pipeline {
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install -r requirements.txt
                     python numpy_pandas_ex.py
+                 """
+            }
+       }
+    stage('generator function') {
+        steps{
+              sh """
+                    virtualenv venv
+                    #. venv/bin/activate
+                    export PATH=${VIRTUAL_ENV}/bin:${PATH}
+                    pip install -r requirements.txt
+                    python pythonfiles/generators_fun_ex.py
+                 """
+            }
+       }
+       stage('generate report') {
+        steps{
+              sh """
+                    virtualenv venv
+                    #. venv/bin/activate
+                    export PATH=${VIRTUAL_ENV}/bin:${PATH}
+                    pip install -r requirements.txt
+                    python generate_reports.py
                     sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/
                  """
             }
        }
-    stage('generator fun') {
+       stage('read report') {
         steps{
               sh """
-                    python pythonfiles/generators_fun_ex.py
+                    virtualenv venv
+                    #. venv/bin/activate
+                    export PATH=${VIRTUAL_ENV}/bin:${PATH}
+                    pip install -r requirements.txt
+                    python read_reports.py
                  """
             }
        } 
