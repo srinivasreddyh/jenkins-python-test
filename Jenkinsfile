@@ -44,20 +44,21 @@ pipeline {
        }
     stage('numpy pandas') {
         steps{
-              sh '''
+              sh """
+                    virtualenv venv
                     #. venv/bin/activate
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install -r requirements.txt
                     python numpy_pandas_ex.py
                     sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/
-                 '''
+                 """
             }
        }
     stage('generator fun') {
         steps{
-              sh '''
+              sh """
                     python pythonfiles/generators_fun_ex.py
-                 '''
+                 """
             }
        } 
     stage('build_id url') {
