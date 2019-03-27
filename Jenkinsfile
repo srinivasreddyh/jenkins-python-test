@@ -19,7 +19,7 @@ pipeline {
       steps {
         slackSend (color: '#FFFF00', message: "STARTED...!  : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
          }
-    } /*
+    }
         stage ('Install Requirements') {
             steps {
                 sh """
@@ -32,10 +32,10 @@ pipeline {
                     pip install --upgrade pip
                     pip install -r requirements.txt
                 """
-                echo "RESULT: ${currentBuild.result}"
-                echo "${env.WORKSPACE}" 
+               /* echo "RESULT: ${currentBuild.result}"
+                echo "${env.WORKSPACE}" */
             }
-     } */
+     }
     stage('Checkout SCM') {
         steps{
              checkout scm
@@ -45,13 +45,8 @@ pipeline {
     stage('numpy pandas') {
         steps{
               sh '''
-                    [ -d venv ] && rm -rf venv
-                    #virtualenv --python=python2.7 venv
-                    virtualenv venv
                     #. venv/bin/activate
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
                     python numpy_pandas_ex.py
                     sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/
                  '''
