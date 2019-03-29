@@ -76,7 +76,7 @@ pipeline {
                  """
             }
        }
-       stage('read report') {
+       stage('read report & final cl_report') {
         steps{
               sh """
                     virtualenv venv
@@ -84,6 +84,7 @@ pipeline {
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install -r requirements.txt
                     python read_reports.py
+                    python final_cl_report.py
                  """
             }
        } 
