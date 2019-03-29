@@ -48,7 +48,7 @@ for key, value in explosion_sound.iteritems():
 
 print "\n============ Human_Sound =============="
 human_sound=(final_df2.loc[:,'2'] - final_df1.loc[:,'2']) *100
-#print explosion_sound
+#print human_sound
 for key, value in human_sound.iteritems():
     if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
@@ -57,7 +57,7 @@ for key, value in human_sound.iteritems():
 
 print "\n=========== Nature_Sound ============="
 nature_sound=(final_df2.loc[:,'3'] - final_df1.loc[:,'3']) *100
-#print explosion_sound
+#print nature_sound
 for key, value in nature_sound.iteritems():
     if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
@@ -66,7 +66,7 @@ for key, value in nature_sound.iteritems():
 
 print "\n========== Domestic_Animals ============"
 domestic_animals=(final_df2.loc[:,'4'] - final_df1.loc[:,'4']) *100
-#print explosion_sound
+#print domestic_animals
 for key, value in domestic_animals.iteritems():
     if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
@@ -75,7 +75,7 @@ for key, value in domestic_animals.iteritems():
 
 print "\n=============== Tools ================="
 tools=(final_df2.loc[:,'5'] - final_df1.loc[:,'5']) *100
-#print explosion_sound
+#print tools
 for key, value in tools.iteritems():
     if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
@@ -84,7 +84,7 @@ for key, value in tools.iteritems():
 
 print "\n============= Macro_Avg ==============="
 macro_avg=(final_df2.loc[:,'macro avg'] - final_df1.loc[:,'macro avg']) *100
-#print explosion_sound
+#print macro_avg
 for key, value in macro_avg.iteritems():
     if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
@@ -93,7 +93,7 @@ for key, value in macro_avg.iteritems():
 
 print "\n============== Micro_Avg ==============="
 micro_avg=(final_df2.loc[:,'micro avg'] - final_df1.loc[:,'micro avg']) *100
-#print explosion_sound
+#print micro_avg
 for key, value in micro_avg.iteritems():
     if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
@@ -102,7 +102,7 @@ for key, value in micro_avg.iteritems():
 
 print "\n============ Weighted_Avg =============="
 weighted_avg=(final_df2.loc[:,'weighted avg'] - final_df1.loc[:,'weighted avg']) *100
-#print explosion_sound
+#print weighted_avg
 for key, value in weighted_avg.iteritems():
     if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
