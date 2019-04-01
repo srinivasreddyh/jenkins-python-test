@@ -107,4 +107,12 @@ for key, value in weighted_avg.iteritems():
     if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
     else:
-        print key," decreased by", format(value).replace("-",""),"%"        
+        print key," decreased by", format(value).replace("-",""),"%"     
+
+
+from slackclient import SlackClient
+sc = SlackClient('xoxp-552021358852-551496783121-596685504006-a310c9fdc55668741d120da97d238679')
+
+sc.api_call("files.upload", filename='jenkins_output.txt', \
+    channels='#jenkin_slack_notifier',username='srinivas_reddy_h', \
+    file=open('/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/jenkins_output.txt', 'r').read())           
