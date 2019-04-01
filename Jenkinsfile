@@ -106,7 +106,6 @@ pipeline {
             echo 'Succeeeded...!'
            /* slackSend (color: '#00FF00', message: "SUCCESSFUL...! : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})") */
            sh '''
-                build.sh > jenkins_output.txt
                 curl -F file=@jenkins_output.txt -F channels=jenkin_slacK_notifier -H "Authorization: vHdFvBIMEX7TmrtZrfEYQizn" https://slack.com/api/files.upload
               '''
         }
