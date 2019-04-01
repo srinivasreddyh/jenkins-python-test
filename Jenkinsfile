@@ -84,7 +84,7 @@ pipeline {
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install -r requirements.txt
                     python read_reports.py
-                    python final_cl_report.py
+                    python final_cl_report.py > /home/srinivasreddyh/mypython/jenkins_output.txt
                  """
             }
        } 
@@ -105,9 +105,6 @@ pipeline {
         success {
             echo 'Succeeeded...!'
            /* slackSend (color: '#00FF00', message: "SUCCESSFUL...! : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})") */
-           sh '''
-                curl -F file=@jenkins_output.txt -F channels=jenkin_slacK_notifier -H "Authorization: vHdFvBIMEX7TmrtZrfEYQizn" https://slack.com/api/files.upload
-              '''
         }
         unstable {
             echo 'Unstable...!'
