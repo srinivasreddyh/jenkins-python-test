@@ -101,6 +101,7 @@ pipeline {
         always {
             echo 'Build Started...!'
            /* archiveArtifacts artifacts: '/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.txt', onlyIfSuccessful: true */
+           curl -F file=@/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/jenkins_output.txt -F channels=jenkin_slacK_notifier -H "Authorization: vHdFvBIMEX7TmrtZrfEYQizn" https://slack.com/api/files.upload
             deleteDir() /* clean up our workspace */
         }
         success {
