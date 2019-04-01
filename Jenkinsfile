@@ -86,6 +86,7 @@ pipeline {
                     python read_reports.py
                     python final_cl_report.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/jenkins_output.txt
                     sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/
+                    curl -F file=@/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/jenkins_output.txt -F channels=jenkin_slack_notifier -H "Authorization: vHdFvBIMEX7TmrtZrfEYQizn" https://slack.com/api/files.upload
                  """
             }
        } 
