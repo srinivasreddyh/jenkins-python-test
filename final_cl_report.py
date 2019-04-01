@@ -110,9 +110,9 @@ for key, value in weighted_avg.iteritems():
         print key," decreased by", format(value).replace("-",""),"%"     
 
 
-from slackclient import SlackClient
-sc = SlackClient('xoxp-552021358852-551496783121-596685504006-a310c9fdc55668741d120da97d238679')
+#from slackclient import SlackClient
+#sc = SlackClient('token')
 
-sc.api_call("files.upload", filename='jenkins_output.txt', \
-    channels='#jenkin_slack_notifier',username='srinivas_reddy_h', \
-    file=open('/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/jenkins_output.txt', 'r').read())           
+#sc.api_call("files.upload", filename='jenkins_output.txt', \
+#    channels='#jenkin_slack_notifier',username='srinivas_reddy_h', \
+#    file=open('/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/jenkins_output.txt', 'r').read())           
