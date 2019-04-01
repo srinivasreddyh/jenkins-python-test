@@ -85,6 +85,7 @@ pipeline {
                     pip install -r requirements.txt
                     python read_reports.py
                     python final_cl_report.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/jenkins_output.txt
+                    sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/
                  """
             }
        } 
