@@ -84,7 +84,7 @@ pipeline {
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install -r requirements.txt
                     python read_reports.py
-                    python final_cl_report.py > /home/srinivasreddyh/mypython/jenkins_output.txt
+                    python final_cl_report.py > /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/jenkins_output.txt
                  """
             }
        } 
