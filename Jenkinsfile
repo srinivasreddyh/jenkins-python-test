@@ -66,10 +66,8 @@ pipeline {
        } */
        stage('generate report without venv') {
         steps{
-              sh '''
-                    python generate_reports.py
-                    sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/
-                 '''
+              sh 'python generate_reports.py'
+              sh 'sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/'
             }
        }
        stage('generate report') {
