@@ -14,6 +14,7 @@ with open(filename ,"rb") as f1:
     new_data1=pickle.load(f1)
 print "\ncurrent BUILD data :",new_data1
 
+
 # to get previous BUILD_NUMBER
 '''
 last_build_no=str(J['master'].get_last_good_build())[-3:]
