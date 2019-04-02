@@ -70,7 +70,6 @@ pipeline {
                     virtualenv venv
                     #. venv/bin/activate
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
-                    pip install -r requirements.txt
                     python generate_reports.py
                     sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/
                  """
