@@ -95,7 +95,7 @@ print "\n============== Micro_Avg ==============="
 micro_avg=(final_df2.loc[:,'micro avg'] - final_df1.loc[:,'micro avg']) *100
 #print micro_avg
 for key, value in micro_avg.iteritems():
-    if value > 0:https://medium.com/@lvthillo/send-slack-notifications-in-jenkins-pipelines-using-a-shared-library-873ca876f72c
+    if value > 0:
         print key,"increased by", format(value).replace("-",""),"%"
     else:
         print key," decreased by", format(value).replace("-",""),"%"
