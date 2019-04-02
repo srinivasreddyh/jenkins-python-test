@@ -19,7 +19,7 @@ pipeline {
       steps {
         slackSend (color: '#FFFF00', message: "STARTED...! : Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
          }
-    } /*
+    }
         stage ('Install Requirements') {
             steps {
                 sh """
@@ -41,7 +41,7 @@ pipeline {
              checkout scm
              sh script: 'echo $PATH'
             }
-       } */ /*
+       } /*
     stage('numpy pandas') {
         steps{
               sh """

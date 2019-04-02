@@ -9,7 +9,7 @@ df = pd.DataFrame(p_data)
 print "pandas output is...."
 print df
 
-J = Jenkins('http://localhost:8080', username='srinivasreddyh', password='meghana3')
+J = Jenkins('http://localhost:8080', username='srinivas', password='wildly123')
 build_no=str(J['master'].get_last_build())[-3:]
 print "current BUILD_NUMBER :",build_no
 

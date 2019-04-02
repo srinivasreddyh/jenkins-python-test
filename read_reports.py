@@ -2,7 +2,7 @@ import pickle
 # using jenkinsapi
 from jenkinsapi.jenkins import Jenkins
 
-J = Jenkins('http://localhost:8080', username='srinivasreddyh', password='meghana3')
+J = Jenkins('http://localhost:8080', username='srinivas', password='wildly123')
 
 # to get current BUILD_NUMBER
 build_no=str(J['master'].get_last_build())[-3:]
