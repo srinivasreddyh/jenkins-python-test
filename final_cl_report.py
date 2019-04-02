@@ -1,11 +1,11 @@
 import pickle 
 import pandas as pd
 
-with open("/home/srinivasreddyh/mypython/cl_report.pkl","rb") as f1:
+with open("/home/srinivas/mypython/cl_report.pkl","rb") as f1:
 	data1=pickle.load(f1)
 #print data1
 
-with open("/home/srinivasreddyh/mypython/cl_report2.pkl","rb") as f2:
+with open("/home/srinivas/mypython/cl_report2.pkl","rb") as f2:
 	data2=pickle.load(f2)
 #print data2
 
@@ -95,7 +95,7 @@ print "\n============== Micro_Avg ==============="
 micro_avg=(final_df2.loc[:,'micro avg'] - final_df1.loc[:,'micro avg']) *100
 #print micro_avg
 for key, value in micro_avg.iteritems():
-    if value > 0:
+    if value > 0:https://medium.com/@lvthillo/send-slack-notifications-in-jenkins-pipelines-using-a-shared-library-873ca876f72c
         print key,"increased by", format(value).replace("-",""),"%"
     else:
         print key," decreased by", format(value).replace("-",""),"%"
