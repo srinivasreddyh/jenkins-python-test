@@ -41,7 +41,7 @@ pipeline {
              checkout scm
              sh script: 'echo $PATH'
             }
-       } */
+       } */ /*
     stage('numpy pandas') {
         steps{
               sh """
@@ -63,7 +63,7 @@ pipeline {
                     python pythonfiles/generators_fun_ex.py
                  """
             }
-       }
+       } */
        stage('generate report') {
         steps{
               sh """
@@ -93,7 +93,6 @@ pipeline {
     stage('build_id url') {
         steps{
               echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-              echo "Running ${env.BUILD_ID} on ${env.BUILD_URL}"
               echo "Running ${env.BUILD_ID},${env.JOB_NAME} on ${env.BUILD_URL}"
             }
        } 
