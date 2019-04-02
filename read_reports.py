@@ -15,7 +15,7 @@ with open(filename ,"rb") as f1:
 print "\ncurrent BUILD data :",new_data1
 
 # to get previous BUILD_NUMBER
-last_build_no=str(J['master'].get_last_good_build())[-3:]
+last_build_no=str(J['master'].get_last_good_build())[-2:]
 print "Previous BUILD_NUMBER :",last_build_no
 
 # to read pickle file of previous build
