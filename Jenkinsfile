@@ -72,6 +72,7 @@ pipeline {
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install -r requirements.txt
                     python generate_reports.py
+                    python /home/srinivas/mypython/final_cl_report.py
                     sudo chmod -R 777 /var/lib/jenkins/workspace/jenkins-python-test_master@tmp/
                  """
             }
