@@ -20,9 +20,9 @@ df2=pd.DataFrame(data2)
 # dropping support
 final_df1=df1.drop(['support'])
 final_df2=df2.drop(['support'])
-print "\nPrevious Results :\n",final_df1
+#print "\nPrevious Results :\n",final_df1
 #print final_df1,"\n"
-print "\nCurrent Results :\n",final_df2
+#print "\nCurrent Results :\n",final_df2
 #print final_df2,"\n"
 
 # columns=['Motor_Sound','Explosion_Sound','Human_Sound','Nature_Sound', \
