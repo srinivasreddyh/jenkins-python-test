@@ -111,7 +111,7 @@ for key, value in weighted_avg.iteritems():
 
 
 from slackclient import SlackClient
-sc = SlackClient('SLACK_API_TOKEN')
+sc = SlackClient('SLACK_TOKEN')
 
 sc.api_call("files.upload", filename='jenkins_output.txt', \
     channels='#jenkin_slack_notifier',username='srinivas_reddy_h', \
