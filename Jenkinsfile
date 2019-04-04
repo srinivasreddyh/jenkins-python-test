@@ -100,6 +100,7 @@ pipeline {
 } 
   post {
         always {
+            echo 'Build Started...!'
            /* archiveArtifacts artifacts: '/var/lib/jenkins/workspace/jenkins-python-test_master@tmp/gen_output.txt', onlyIfSuccessful: true */
         }
         success {
